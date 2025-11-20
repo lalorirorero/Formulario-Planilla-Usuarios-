@@ -7,7 +7,7 @@ const exampleShifts = [
 
 export function TurnosPlanificacionForm() {
   return (
-    <div className="space-y-3 text-sm">
+    <div className="space-y-3 text-sm flex flex-col items-center justify-center w-full">
       <div className="space-y-1">
         <h3 className="text-sm font-semibold text-slate-800">
           Turnos base

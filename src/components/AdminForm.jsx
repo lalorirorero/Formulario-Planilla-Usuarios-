@@ -2,7 +2,7 @@ import React from "react";
 
 export function AdminForm() {
   return (
-    <form className="space-y-3 text-sm">
+    <form className="space-y-3 text-sm flex flex-col items-center justify-center w-full">
       <div className="space-y-1">
         <label className="block text-slate-600">
           Nombre <span className="text-sky-500">*</span>

@@ -2,7 +2,7 @@ import React from "react";
 
 export function ResumenPaso() {
   return (
-    <div className="space-y-3 text-sm">
+    <div className="space-y-3 text-sm flex flex-col items-center justify-center w-full">
       <h3 className="text-sm font-semibold text-slate-800">
         Resumen de la configuración
       </h3>

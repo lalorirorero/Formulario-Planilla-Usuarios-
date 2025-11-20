@@ -41,68 +41,55 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-200">
-      <header className="mx-auto max-w-5xl px-3 sm:px-4 lg:px-6 pt-4 pb-3 sm:pt-6 sm:pb-4">
-        <div className="bg-slate-100 rounded-3xl shadow-sm px-4 sm:px-6 py-4 sm:py-5 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-          {/* Texto principal */}
-          <div className="w-full lg:w-[40%] space-y-2">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold leading-snug text-slate-900">
-              Onboarding GeoVictoria — Ingreso de Empresa y Trabajadores
-            </h1>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-md">
-              Prototipo web para reemplazar la planilla Excel clásica de onboarding: empresa,
-              trabajadores, turnos y planificación.
-            </p>
-          </div>
-
-          {/* Stepper */}
-          <div className="w-full lg:flex-1 lg:px-2">
-            <Stepper activeStep={step} />
-          </div>
-
-          {/* Card de contenido del paso */}
-          <div className="w-full lg:w-[30%] xl:w-[28%]">
-            <section className="bg-white rounded-3xl shadow-md px-4 sm:px-5 py-4 sm:py-5 w-full">
-              <h2 className="text-base sm:text-lg font-semibold text-slate-900 mb-3 sm:mb-4">
-                {steps[step]}
-              </h2>
-
+    <div className="min-h-screen bg-slate-200 flex flex-col items-center justify-center">
+      <header className="w-full flex flex-col items-center justify-center">
+        <div className="w-full max-w-4xl mx-auto px-4 py-6 flex flex-col items-center justify-center gap-6">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 text-center mb-2">
+            Onboarding GeoVictoria — Ingreso de Empresa y Trabajadores
+          </h1>
+          <p className="text-sm text-slate-600 text-center max-w-xl mb-4">
+            Prototipo web para reemplazar la planilla Excel clásica de onboarding: empresa, trabajadores, turnos y planificación.
+          </p>
+          <Stepper activeStep={step} />
+          <section className="w-full max-w-md bg-white rounded-3xl shadow-md px-6 py-6 flex flex-col items-center justify-center">
+            <h2 className="text-lg font-semibold text-slate-900 mb-4 text-center">
+              {steps[step]}
+            </h2>
+            <div className="w-full flex flex-col items-center justify-center">
               {getStepForm(step)}
-
-              <div className="mt-5 flex flex-col sm:flex-row items-stretch gap-2 sm:gap-3">
-                <button
-                  type="button"
-                  onClick={handlePrev}
-                  disabled={isFirst}
-                  className={[
-                    "w-full sm:flex-1 rounded-3xl border px-3 py-2 text-sm font-medium transition",
-                    isFirst
-                      ? "border-slate-200 text-slate-300 bg-white cursor-not-allowed"
-                      : "border-slate-300 text-slate-600 bg-white hover:bg-slate-50"
-                  ].join(" ")}
-                >
-                  Atrás
-                </button>
-                <button
-                  type="button"
-                  onClick={handleNext}
-                  className={[
-                    "w-full sm:flex-1 rounded-3xl px-3 py-2 text-sm font-semibold text-white shadow-md transition",
-                    isLast
-                      ? "bg-emerald-500 hover:bg-emerald-600"
-                      : "bg-sky-500 hover:bg-sky-600"
-                  ].join(" ")}
-                >
-                  {isLast ? "Finalizar" : "Siguiente"}
-                </button>
-              </div>
-            </section>
-          </div>
+            </div>
+            <div className="mt-6 flex flex-row items-center justify-center gap-4 w-full">
+              <button
+                type="button"
+                onClick={handlePrev}
+                disabled={isFirst}
+                className={[
+                  "w-32 rounded-3xl border px-3 py-2 text-sm font-medium transition",
+                  isFirst
+                    ? "border-slate-200 text-slate-300 bg-white cursor-not-allowed"
+                    : "border-slate-300 text-slate-600 bg-white hover:bg-slate-50"
+                ].join(" ")}
+              >
+                Atrás
+              </button>
+              <button
+                type="button"
+                onClick={handleNext}
+                className={[
+                  "w-32 rounded-3xl px-3 py-2 text-sm font-semibold text-white shadow-md transition",
+                  isLast
+                    ? "bg-emerald-500 hover:bg-emerald-600"
+                    : "bg-sky-500 hover:bg-sky-600"
+                ].join(" ")}
+              >
+                {isLast ? "Finalizar" : "Siguiente"}
+              </button>
+            </div>
+          </section>
         </div>
       </header>
-
-      <main className="mx-auto max-w-5xl px-3 sm:px-4 lg:px-6 pb-6 sm:pb-10">
-        <div className="mt-4 sm:mt-6 rounded-3xl border border-dashed border-slate-300 bg-slate-100/40 flex flex-col items-center justify-center text-slate-400 text-xs sm:text-sm text-center px-4 py-10 sm:py-14">
+      <main className="w-full flex flex-col items-center justify-center">
+        <div className="mt-8 rounded-3xl border border-dashed border-slate-300 bg-slate-100/40 flex flex-col items-center justify-center text-slate-400 text-xs sm:text-sm text-center px-4 py-10 sm:py-14 max-w-xl mx-auto">
           <p className="mb-2">
             Paso actual:{" "}
             <span className="font-semibold text-slate-500">
@@ -110,9 +97,7 @@ export default function App() {
             </span>
           </p>
           <p className="max-w-lg text-slate-500 text-xs sm:text-sm">
-            Esta área está pensada para mostrar, en la versión final, una vista más
-            detallada del Excel o de los datos consolidados (preview de planillas,
-            validaciones, métricas, etc.). Por ahora es solo contextual para el demo.
+            Esta área está pensada para mostrar, en la versión final, una vista más detallada del Excel o de los datos consolidados (preview de planillas, validaciones, métricas, etc.). Por ahora es solo contextual para el demo.
           </p>
         </div>
       </main>
