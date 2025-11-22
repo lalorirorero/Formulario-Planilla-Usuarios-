@@ -80,7 +80,7 @@ export function TrabajadoresForm() {
         <p className="text-xs text-slate-500 text-center">
           Puedes cargar una plantilla Excel con todos los trabajadores o ingresar algunos manualmente para partir el onboarding.
         </p>
-        <div className="border-2 border-dashed border-sky-400 rounded-3xl bg-slate-50 px-6 py-6 space-y-3 w-full max-w-2xl flex flex-col items-center">
+        <div className="border-4 border-dashed border-sky-500 rounded-3xl bg-slate-50 px-12 py-12 space-y-3 w-full max-w-4xl flex flex-col items-center">
           <p className="text-xs text-slate-600 text-center">
             Pega aquí las celdas copiadas desde tu Excel (Rut, Correo, Nombres, Apellidos, Grupo):
           </p>
