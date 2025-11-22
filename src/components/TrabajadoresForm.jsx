@@ -99,31 +99,31 @@ export function TrabajadoresForm() {
       {pastedRows.length > 0 && (
         <div className="w-full mt-4">
           <h4 className="text-base font-semibold text-slate-700 mb-2 text-center">Previsualización de trabajadores</h4>
-          <div className="w-full">
-            <table className="w-full text-base border border-slate-300 rounded-2xl bg-white table-fixed">
+          <div className="w-full overflow-x-auto">
+            <table className="min-w-[900px] w-full text-base border border-slate-300 rounded-2xl bg-white">
               <colgroup>
-                <col className="w-[12%]" />
-                <col className="w-[20%]" />
-                <col className="w-[18%]" />
-                <col className="w-[18%]" />
-                <col className="w-[10%]" />
-                <col className="w-[22%]" />
+                <col style={{width: '16%'}} />
+                <col style={{width: '20%'}} />
+                <col style={{width: '18%'}} />
+                <col style={{width: '18%'}} />
+                <col style={{width: '10%'}} />
+                <col style={{width: '18%'}} />
               </colgroup>
               <thead className="bg-slate-100 text-slate-600">
                 <tr>
                   {columns.map((col) => (
-                    <th key={col} className="px-2 py-3 text-left font-medium border-b border-slate-200 truncate">{col}</th>
+                    <th key={col} className="px-3 py-3 text-left font-medium border-b border-slate-200 whitespace-nowrap">{col}</th>
                   ))}
-                  <th className="px-2 py-3 text-left font-medium border-b border-slate-200 truncate">Errores</th>
+                  <th className="px-3 py-3 text-left font-medium border-b border-slate-200 whitespace-nowrap">Errores</th>
                 </tr>
               </thead>
               <tbody>
                 {pastedRows.map((row, idx) => (
                   <tr key={idx} className="border-t border-slate-100">
                     {row.slice(0, columns.length).map((cell, cidx) => (
-                      <td key={cidx} className="px-2 py-3 truncate">{cell}</td>
+                      <td key={cidx} className="px-3 py-3 whitespace-nowrap align-middle">{cell}</td>
                     ))}
-                    <td className="px-2 py-3 text-red-500 text-xs truncate">
+                    <td className="px-3 py-3 text-red-500 text-xs whitespace-nowrap align-middle">
                       {validationErrors[idx] && validationErrors[idx].length > 0
                         ? validationErrors[idx].join(", ")
                         : ""}
